@@ -1,6 +1,8 @@
 import streamlit as st
 import pickle
 import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
+encoder = OneHotEncoder(handle_unknown='ignore', drop=None)
 
 teams = ['Sunrisers Hyderabad',
  'Mumbai Indians',
@@ -18,7 +20,9 @@ cities = ['Hyderabad', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata', 'Delhi',
        'Visakhapatnam', 'Pune', 'Raipur', 'Ranchi', 'Abu Dhabi',
        'Sharjah', 'Mohali', 'Bengaluru']
 
-pipe = pickle.load(open('pipe.pkl','rb'))
+
+pipe = pickle.load(open('D:\Placement\IPL-Predictor-main\IPL-Predictor-main\pipe.pkl','rb'))
+'if__name__'=="__main__"
 st.title('IPL Predictor Percentage')
 
 col1, col2 = st.columns(2)
